@@ -12,11 +12,11 @@
   --letras : #FFFFFF;
 
   --yellow: #EECC75;
-  --green: #CAD297;
+  --pink: #e783e9;
   --aqua: #B7EAC5;
-  --lightBlue: #A2EEE5;
+  --lightBlue: #3f55e6;
   --darkBlue: #8EA2EA;
-  --red: #FC1A1A;
+  --red: #f92b18;
 
   --font-family-titles: 'Dosis', sans-serif;
   --font-family-text: 'Red Hat Display', sans-serif;
@@ -237,21 +237,21 @@ button {
 }
 #id28 { --idColor: var(--red); }
 #id12 { --idColor: var(--red); }
-#id16 { --idColor: var(--green); }
+#id16 { --idColor: var(--pink); }
 #id35 { --idColor: var(--lightBlue); }
 #id80 { --idColor: var(--darkBlue); }
 #id99 { --idColor: var(--marron-dark-1); }
 #id18 { --idColor: var(--marron-medium-1); }
 #id10751 { --idColor: var(--yellow); }
 #id14 { --idColor: var(--lightBlue); }
-#id36 { --idColor: var(--green); }
+#id36 { --idColor: var(--pink); }
 #id27 { --idColor: var(--lightBlue); }
 #id10402 { --idColor: var(--darkBlue); }
 #id9648 { --idColor: var(--marron-dark-1); }
 #id10749 { --idColor: var(--marron-medium-1); }
 #id878 { --idColor: var(--yellow); }
 #id10770 { --idColor: var(--red); }
-#id53 { --idColor: var(--green); }
+#id53 { --idColor: var(--pink); }
 #id10752 { --idColor: var(--lightBlue); }
 #id37 { --idColor: var(--darkBlue); }
 
