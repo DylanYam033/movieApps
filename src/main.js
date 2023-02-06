@@ -15,6 +15,7 @@ const api = axios.create({
 async function getTrendingMoviesPreview() {
     const { data } = await api('trending/movie/day'); //endpoint de la API
     const movies = data.results; //guardamos el array de peliculas en movies
+    console.log(data);
 
     movies.forEach(movie => {
 
@@ -37,7 +38,9 @@ async function getTrendingMoviesPreview() {
 async function getCategoriesPreview() {
     const res = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=4fb89b77a58cc78532d66cb766ccdab3');
     const data = await res.json();
-  
+    console.log(res);
+    console.log(data);
+   
     const categories = data.genres;
     categories.forEach(category => {
       const previewCategoriesContainer = document.querySelector('#categoriesPreview .categoriesPreview-list')
@@ -55,6 +58,3 @@ async function getCategoriesPreview() {
       previewCategoriesContainer.appendChild(categoryContainer);
     });
 }
-  
-getTrendingMoviesPreview();
-getCategoriesPreview();
