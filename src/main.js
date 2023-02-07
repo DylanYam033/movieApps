@@ -19,6 +19,9 @@ function createMovies(movies, container) {
     const movieContainer = document.createElement('div');
     movieContainer.classList.add('movie-container');
 
+    //cada vez demos click sobre una pelicula, ejecutamos la arrow function
+    movieContainer.addEventListener('click', () => {location.hash = '#movie=' + movie.id;});
+
     const movieImg = document.createElement('img');
     movieImg.classList.add('movie-img');
     movieImg.setAttribute('alt', movie.title);
@@ -106,4 +109,27 @@ async function getTrendingMovies() {
   console.log(data);
 
   createMovies(movies, genericSection); //usamos el mismo generic section pero ahora con la lista de tendencias
+}
+
+//funcion para traer detalles de una pelicula en especifico
+
+async function getMovieById(id) {
+  const { data: movie } = await api('movie/' + id);
+  console.log(movie);
+
+  const movieImgUrl = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
+  headerSection.style.background = `
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.35) 19.27%,
+      rgba(0, 0, 0, 0) 29.17%
+    ),
+    url(${movieImgUrl})
+  `;
+  //traemos los elementos del html y le insertamos la informacion que nos da la API
+  movieDetailTitle.textContent = movie.title;
+  movieDetailDescription.textContent = movie.overview;
+  movieDetailScore.textContent = movie.vote_average;
+
+  createCategories(movie.genres, movieDetailCategoriesList);
 }

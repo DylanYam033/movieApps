@@ -22,7 +22,7 @@ window.addEventListener('hashchange', navigator, false);
 function navigator() {
   console.log({ location });
 
-  //preguntamos si la locacion actual empiza por #trends (tambien le podemos cambiar el valor con location.hash = "")
+  //preguntamos si la locacion actual empieza por #trends (tambien le podemos cambiar el valor con location.hash = "")
   if (location.hash.startsWith('#trends')) {
     trendsPage();
   } else if (location.hash.startsWith('#search=')) {
@@ -45,7 +45,9 @@ function smoothscroll(){
   }
 };
 
-// En estas funciones mostramos u ocultamos elementos dependiendo de la url donde estemos
+// En estas funciones mostramos u ocultamos elementos dependiendo de la url donde estemos ademas ejecutamos funciones
+// dependiendo de la url en la que estemos
+
 function homePage() {
     headerSection.classList.remove('header-container--long');
     headerSection.style.background = '';
@@ -100,7 +102,6 @@ function movieDetailsPage() {
     console.log('Movie!!');
 
     headerSection.classList.add('header-container--long');
-    // headerSection.style.background = '';
     arrowBtn.classList.remove('inactive');
     arrowBtn.classList.add('header-arrow--white');
     headerTitle.classList.add('inactive');
@@ -111,6 +112,11 @@ function movieDetailsPage() {
     categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.add('inactive');
     movieDetailSection.classList.remove('inactive');
+
+    //obtenemos los argumentos de la url al igual que antes
+    // ['#movie', '234567']
+    const [_, movieId] = location.hash.split('=');
+    getMovieById(movieId);
 }
 
 function searchPage() {
