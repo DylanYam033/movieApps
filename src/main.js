@@ -126,10 +126,25 @@ async function getMovieById(id) {
     ),
     url(${movieImgUrl})
   `;
+
   //traemos los elementos del html y le insertamos la informacion que nos da la API
   movieDetailTitle.textContent = movie.title;
   movieDetailDescription.textContent = movie.overview;
   movieDetailScore.textContent = movie.vote_average;
 
   createCategories(movie.genres, movieDetailCategoriesList);
+  
+  //ejecutamos la funcion de peliculas relacionadas cuando estamos en esta url y le pasamos el id de le pelicula
+  getRelatedMoviesId(id);
+}
+
+//funcion para traer peliculas relacionadas a un id de de una pelicula
+
+async function getRelatedMoviesId(id) {
+  const {data} = await api('movie/' + id + '/recommendations');
+  const relatedMovies = data.results;
+  console.log(relatedMovies);
+
+  // le pasamos el array que contiene le informacion y el contenedor
+  createMovies(relatedMovies, relatedMoviesContainer);
 }
