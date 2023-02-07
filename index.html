@@ -17,14 +17,15 @@
     <header id="header" class="header-container">
         <span class="header-arrow inactive">&lt;</span>
         <h1 class="header-title">MoviesApp</h1>
-        <h1 class="header-title header-title--categoryView inactive">Acción</h1>
+        <h1 class="header-title header-title--categoryView inactive"></h1>
     
         <form id="searchForm" class="header-searchForm">
-          <input type="text" placeholder="Vengadores" />
+          <input type="text" placeholder="Escribe un nombre"/>
           <button id="searchBtn">🔍</button>
         </form>
       </header>
 
+      <!-- seccion de slide con las peliculas en horizontal -->
       <section id="trendingPreview" class="trendingPreview-container">
         <div class="trendingPreview-header">
           <h2 class="trendingPreview-title">Tendencias</h2>
@@ -36,6 +37,7 @@
         </article>
       </section>
 
+      <!-- seccion de lista con todas las categorias -->
       <section id="categoriesPreview" class="categoriesPreview-container">
         <h2 class="categoriesPreview-title">Categorías</h2>
     
@@ -44,30 +46,9 @@
         </article>
       </section>
     
+      <!-- seccion de peliculas filtradas por categoria -->
       <section id="genericList" class="genericList-container inactive">
-        <div class="movie-container">
-          <img
-            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
-            alt="Nombre de la película"
-          />
-        </div>
-    
-        <div class="movie-container">
-          <img
-            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
-            alt="Nombre de la película"
-          />
-        </div>
-    
-        <div class="movie-container">
-          <img
-            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
-            alt="Nombre de la película"
-          />
-        </div>
+        
       </section>
 
       <section id="movieDetail" class="movieDetail-container inactive">
