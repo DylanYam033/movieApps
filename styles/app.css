@@ -267,10 +267,17 @@ button {
   padding: 32px 24px;
 }
 
+@media (max-width:360px){
+  .genericList-container .movie-container {
+    display: inline-block;
+    width: 47.5%;
+  }
+}
+
 .genericList-container .movie-container {
   display: inline-block;
-  width: 47.5%;
 }
+
 
 .genericList-container .movie-img {
   width: 100%;
@@ -436,10 +443,7 @@ footer {
   border-radius:100%;
   background-color:#33353d
 }
-.copyright-text
-{
-  margin:0
-}
+
 @media (max-width:991px)
 {
   .site-footer [class^=col-]
